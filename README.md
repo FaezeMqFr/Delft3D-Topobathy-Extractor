@@ -1,45 +1,45 @@
-# Topobathy Data Extraction for Delft3D-FM
+# Delft3D-Topobathy-Extractor
 
 ## Overview
 
-This script automates the extraction of topobathymetric data (elevation and bathymetry) from DEM raster files to Delft3D-FM grid points. It iteratively processes raster files, samples elevation values at specified grid points, and saves the output in text format.
+The **Delft3D-Topobathy-Extractor** automates the extraction of topobathymetric data from DEM raster files to grid points used in Delft3D-FM hydrodynamic modeling. It ensures consistent raster projection, grid point sampling, and output export for accurate modeling.
 
 ---
 
 ## Features
 
-1. **Batch Processing**: Processes multiple DEM files at once.
-2. **Projection Handling**: Reprojects rasters to WGS84 for consistency.
-3. **Sampling**: Extracts elevation values at Delft3D-FM grid coordinates.
-4. **Outputs**: Saves sampled data as text files for further analysis.
+1. **Batch Processing**: Processes multiple DEM raster files in a folder.
+2. **Projection Consistency**: Converts all DEMs to WGS84.
+3. **Sampling**: Extracts elevation values from DEMs at specified grid points.
+4. **Output Export**: Saves sampled data as text files ready for Delft3D-FM.
 
 ---
 
 ## Requirements
 
 - ArcGIS with **Spatial Analyst Extension** enabled.
-- Python with `arcpy` module.
+- Python with `arcpy` module installed.
 - DEM files in `.tif` format.
-- Grid points stored in a text file with X and Y coordinates.
+- A grid coordinate file in plain text format (X and Y coordinates).
 
 ---
 
-## Input/Output
+## Inputs and Outputs
 
 ### Inputs:
-1. **DEM Files**: Folder containing raster files (`.tif`).
-2. **Coordinate File**: Text file with X and Y grid points.
-3. **Output Geodatabase**: Workspace for temporary and intermediate data.
-4. **Output Folder**: Directory to save final sampled data as text files.
+1. **DEM Folder**: Directory containing DEM raster files.
+2. **Coordinate File**: Text file with grid point coordinates (X, Y).
+3. **Output Geodatabase**: For intermediate and processed data.
+4. **Output Folder**: Directory for text files with sampled data.
 
 ### Outputs:
-- Text files containing sampled topobathy values at grid points.
+- Text files containing extracted elevation data at grid points.
 
 ---
 
 ## Installation
 
-1. Clone the repository:
+1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/DEM_Topobathy_Sampling.git
-   cd DEM_Topobathy_Sampling
+   git clone https://github.com/your-username/Delft3D-Topobathy-Extractor.git
+   cd Delft3D-Topobathy-Extractor
