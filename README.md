@@ -43,3 +43,37 @@ The **Delft3D-Topobathy-Extractor** automates the extraction of topobathymetric 
    ```bash
    git clone https://github.com/your-username/Delft3D-Topobathy-Extractor.git
    cd Delft3D-Topobathy-Extractor
+   
+2. Install the required software:
+   - Ensure you have ArcGIS installed with the **Spatial Analyst Extension** enabled.
+   - Verify that Python and the `arcpy` module are properly configured in your environment.
+
+3. Set up your input data:
+   - Place all DEM raster files in a single directory. Ensure they are in `.tif` format.
+   - Create a plain text file containing grid point coordinates in the following format:
+     ```
+     X1,Y1
+     X2,Y2
+     ...
+     ```
+   - Ensure the coordinate file and raster files are accessible from your environment.
+
+4. Update the script:
+   - Open `Delft3D_Topobathy_Extractor.py` and modify the following paths:
+     ```python
+     raster_path = r"Path\To\DEM_Rasters"
+     coord_file = r"Path\To\mesh_coord.txt"
+     output_gdb = r"Path\To\Output_GDB.gdb"
+     output_folder = r"Path\To\SampledPoints_Output"
+     ```
+
+5. Run the script:
+   - Execute the script in an **ArcGIS Python environment**:
+     ```bash
+     python Delft3D_Topobathy_Extractor.py
+     ```
+
+6. Verify the output:
+   - Processed text files with sampled topobathy data will be saved in the specified output folder. The files will be named `SamplePoints_0.txt`, `SamplePoints_1.txt`, and so on for each DEM file processed.
+
+---
